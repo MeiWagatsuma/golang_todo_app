@@ -22,9 +22,9 @@ const (
 )
 
 func init() {
-
+	// parseTime=trueはtime.Time型をScanするのに必要
 	cmd := fmt.Sprintf(
-		"%s:%s@(%s)/%s",config.Config.UserName, config.Config.Password, config.Config.Host, config.Config.DbName,
+		"%s:%s@(%s)/%s?parseTime=true",config.Config.UserName, config.Config.Password, config.Config.Host, config.Config.DbName,
 		) 
 	
 	Db, err = sql.Open(config.Config.SQLDriver, cmd)
