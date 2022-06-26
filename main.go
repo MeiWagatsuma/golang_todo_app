@@ -58,6 +58,15 @@ func main() {
 	user.CreateTodo("FIrst Todo")
 	*/
 
-	t, _ := models.GetTodo(1)
-	fmt.Println(t)
+	// READ
+	// t, _ := models.GetTodo(1)
+	// fmt.Println(t)
+
+	/*
+	// Multiple READ 
+	todos, _ := models.GetTodos()
+	for _, v := range todos {
+		fmt.Println(v)
+	}
+	*/
 }
