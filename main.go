@@ -10,6 +10,10 @@ func main() {
 	fmt.Println(models.Db)
 	// defer Db.Close()
 
+	////////////////////
+	// users
+	////////////////////
+
 	/*
 	// CREATE
 	u := &models.User{}
@@ -44,4 +48,12 @@ func main() {
 	u.DeleteUser()
 	fmt.Println(u)
 	*/
+
+	////////////////////
+	// todos
+	////////////////////
+	// CREATE
+	user, _ := models.GetUser(2)
+	user.CreateTodo("FIrst Todo")
+
 }
