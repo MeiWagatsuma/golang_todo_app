@@ -69,4 +69,10 @@ func main() {
 		fmt.Println(v)
 	}
 	*/
+
+	user, _ := models.GetUser(3)
+	todo, _ := user.GetTodosByUser()
+	for _, v := range todo {
+		fmt.Println(v)
+	}
 }
