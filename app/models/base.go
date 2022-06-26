@@ -1,12 +1,14 @@
 package models
 
 import (
+	"crypto/sha1"
 	"database/sql"
 	"fmt"
 	"log"
 
 	"../../config"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/google/uuid"
 )
 
 
@@ -28,7 +30,7 @@ func init() {
 	if err != nil{
 		log.Fatal(err)
 	}
-	defer Db.Close()
+	defer fmt.Println("close")
 	
 	cmdU := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (
 		id INTEGER UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -42,4 +44,13 @@ func init() {
 	if err != nil {
 		log.Fatal("CREATE failed: ",err)
 	}
+}
+func createUUID() (uuidobj uuid.UUID) {
+	uuidobj, _ = uuid.NewUUID()
+	return uuidobj
+}
+
+func Encrypt(plaintext string) (cryptext string) {
+	cryptext = fmt.Sprintf("%x", sha1.Sum([]byte(plaintext)))
+	return cryptext
 }
