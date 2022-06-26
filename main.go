@@ -52,8 +52,12 @@ func main() {
 	////////////////////
 	// todos
 	////////////////////
+	/*
 	// CREATE
 	user, _ := models.GetUser(2)
 	user.CreateTodo("FIrst Todo")
+	*/
 
+	t, _ := models.GetTodo(1)
+	fmt.Println(t)
 }
