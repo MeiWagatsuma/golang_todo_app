@@ -38,8 +38,10 @@ func main() {
 	fmt.Println(u)
 	*/
 
+	/*
 	// DELETE
 	u, _ := models.GetUser(1)
 	u.DeleteUser()
 	fmt.Println(u)
+	*/
 }
