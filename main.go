@@ -70,9 +70,17 @@ func main() {
 	}
 	*/
 
+	/*
+	// Multiple READ by User
 	user, _ := models.GetUser(3)
 	todo, _ := user.GetTodosByUser()
 	for _, v := range todo {
 		fmt.Println(v)
 	}
+	*/
+
+	// UPDATE
+	t, _ := models.GetTodo(1)
+	t.Content = "Update Todo"
+	t.UpdateTodo()
 }
