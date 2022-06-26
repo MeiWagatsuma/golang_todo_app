@@ -27,6 +27,7 @@ func main() {
 	fmt.Println(u)
 	*/
 
+	/*
 	// UPDATE
 	u, _ := models.GetUser(1)
 	u.Name = "Test2"
@@ -34,5 +35,11 @@ func main() {
 	u.UpdateUser()
 	// ↓確認用の出力
 	u, _ = models.GetUser(1)
+	fmt.Println(u)
+	*/
+
+	// DELETE
+	u, _ := models.GetUser(1)
+	u.DeleteUser()
 	fmt.Println(u)
 }

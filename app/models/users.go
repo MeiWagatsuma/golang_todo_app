@@ -58,3 +58,13 @@ func (u *User) UpdateUser() (err error) {
 	}
 	return err
 }
+
+// NOTE 引数でidとってもいいかも
+func (u *User) DeleteUser() (err error) {
+	cmd := `DELETE FROM users WHERE id = ?`
+	_, err = Db.Exec(cmd, u.ID)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return err
+}
