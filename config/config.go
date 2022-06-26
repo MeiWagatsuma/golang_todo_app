@@ -9,9 +9,12 @@ import (
 
 type configList struct {
 	Port string
-	SQLDriver string
-	DbName string
 	LogFile string
+	SQLDriver string
+	UserName string
+	Password string
+	Host string
+	DbName string
 }
 
 var Config configList
@@ -28,8 +31,11 @@ func LoadConfig() {
 	}
 	Config = configList{
 		Port: cfg.Section("Web").Key("port").MustString("8080"),
-		SQLDriver: cfg.Section("db").Key("driver").String(),
-		DbName: cfg.Section("db").Key("name").String(),
 		LogFile: cfg.Section("web").Key("logfile").String(),
+		SQLDriver: cfg.Section("db").Key("driver").String(),
+		UserName: cfg.Section("db").Key("username").String(),
+		Password: cfg.Section("db").Key("password").String(),
+		Host: cfg.Section("db").Key("host").String(),
+		DbName: cfg.Section("db").Key("dbname").String(),
 	}
 }
